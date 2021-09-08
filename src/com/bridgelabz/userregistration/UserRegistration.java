@@ -18,7 +18,7 @@ public class UserRegistration {
 	
 
 	public static boolean checkMobileNumber(String mobileNumber) {
-		Pattern pattern = Pattern.compile("[1-9][0-9][\s][1-9][0-9]{9}");
+		Pattern pattern = Pattern.compile("[0-9]{1,2}[\s][1-9][0-9]{9}");
 		Matcher matcher = pattern.matcher(mobileNumber);
 		return matcher.matches();
 	}
