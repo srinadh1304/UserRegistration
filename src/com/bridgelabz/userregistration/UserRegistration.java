@@ -23,6 +23,12 @@ public class UserRegistration {
 		return matcher.matches();
 	}
 	
+	public static boolean checkPassword(String password) {
+		Pattern pattern = Pattern.compile("[a-zA-Z0-9]{8,}");
+		Matcher matcher = pattern.matcher(password);
+		return matcher.matches();
+	}
+	
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter First name");
@@ -53,6 +59,14 @@ public class UserRegistration {
 			System.out.println("Valid");
 		else
 			System.out.println("Invalid");
+		
+		System.out.println("Enter password:");
+		String password = scanner.nextLine();
+		if(checkPassword(password))
+			System.out.println("Valid");
+		else
+			System.out.println("Invalid");
+		
 		scanner.close();
 	}
 }
