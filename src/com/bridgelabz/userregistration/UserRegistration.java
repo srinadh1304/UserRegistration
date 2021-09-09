@@ -5,7 +5,7 @@ import java.util.regex.*;
 
 public class UserRegistration {
 	
-	public static boolean nameValidation(String name) {
+	public static boolean checkName(String name) {
 		String nameValidation="^[A-Z][a-z]{2,}$";
 		return Pattern.matches(nameValidation, name);
 	}
@@ -14,7 +14,7 @@ public class UserRegistration {
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter First name");
 		String firstName=scanner.next();
-		if(!nameValidation(firstName))
+		if(!checkName(firstName))
 			System.out.println("Invalid format");
 		else
 			System.out.println("Valid format");
